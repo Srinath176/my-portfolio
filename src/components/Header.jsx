@@ -119,11 +119,9 @@ function Header() {
               smooth={true}
               duration={1000}
               offset={-70}
-              spy={true}
-              activeClass="active-link"
               className="px-4 py-2 rounded-full flex items-center gap-2 font-semibold shadow-lg cursor-pointer transition-colors duration-[0.3s] bg-[var(--color-accent)] text-[var(--color-button-text)] hover:bg-[var(--color-accent-hover)]"
             >
-              Hire Me
+              Join Me
               <motion.div
                 animate={{ y: [0, -4, 0], opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 2 }}
@@ -166,11 +164,9 @@ function Header() {
               smooth={true}
               duration={1000}
               offset={-70}
-              spy={true}
-              activeClass="active-link"
               className="bg-[var(--color-button)] text-[var(--color-button-text)] px-3 py-2 rounded-full flex items-center gap-2 text-sm font-semibold cursor-pointer"
             >
-              Hire Me
+              Join Me
               <motion.div
                 animate={{ y: [0, -4, 0], opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 2 }}

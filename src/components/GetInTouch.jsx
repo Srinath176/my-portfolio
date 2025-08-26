@@ -4,7 +4,8 @@ import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
-import { FiMail, FiPhone, FiSend } from "react-icons/fi";
+import { FiMail, FiSend } from "react-icons/fi";
+import { RiWhatsappFill } from "react-icons/ri";
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -18,22 +19,22 @@ export default function GetInTouch() {
     {
       icon: <FaLinkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://linkedin.com/in/srinath-g-dev",
     },
     {
       icon: <FaGithub className="w-5 h-5" />,
       label: "GitHub",
-      href: "https://github.com/yourprofile",
+      href: "https://github.com/Srinath176",
     },
     {
       icon: <FaTelegram className="w-5 h-5" />,
       label: "Telegram",
-      href: "https://t.me/yourhandle",
+      href: "https://t.me/srinathg_dev",
     },
     {
-      icon: <FiPhone className="w-5 h-5" />,
+      icon: <RiWhatsappFill className="w-5 h-5" />,
       label: "WhatsApp",
-      href: "https://wa.me/91XXXXXXXXXX",
+      href: "https://wa.me/919573935893",
     },
   ];
 
@@ -61,10 +62,10 @@ export default function GetInTouch() {
 
     emailjs
       .send(
-        "service_wue0mna",
-        "template_sxktmla",
+        import.meta.env.VITE_EMAILJS_SERVICEID,
+        import.meta.env.VITE_EMAILJS_TEMPLATEID,
         formData,
-        "i8uxZf9JRQ_1Jr14R"
+        import.meta.env.VITE_EMAILJS_PUBLICKEY
       )
       .then(() => {
         toast.success("Message sent!");
@@ -95,7 +96,7 @@ export default function GetInTouch() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-[var(--color-text)]">
-            Get In Touch
+            Work With Me
           </h2>
           <p className="text-[var(--color-text-secondary)]">
             Have a question, Job or collaboration in mind? Let's connect.
