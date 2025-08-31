@@ -22,10 +22,26 @@ const allProjects = [
     tech: ["Reactjs", "Nodejs", "Express", "MongoDb", "Jwt", "Google Auth","Open AI"],
   },
   {
+    id: "portfolio",
+    title: "Portfolio",
+    description:
+      "A modern fully responsive, animated personal portfolio website showcases skills, projects and contact section for communication.",
+    github: "https://github.com/Srinath176/my-portfolio",
+    objective: "personal portfolio for showcasing skills",
+    features: [
+      "Fast & Responsive UI",
+      "Framer Motion Animations",
+      "Dark/Light Theme",
+      "Contact Form with EmailJs",
+      "Modern Design"
+    ],
+    tech: ["Reactjs","TailwindCss","Framer-Motion","EmailJs","React-Icons"],
+  },
+  {
     id: "clothing-store",
     title: "Clothing Store",
     description:
-      "Full stack ecommerce clothing store with product-management,cart,authentication,checkouts",
+      "Full stack e-commere clothing store with product management, cart functionality, jwt authentication, stripe-payments and admin-panel.",
     github: "https://github.com/Srinath176/e-commerce",
     objective: "e-commerce clothing store for men, women and kids",
     features: [
