@@ -40,9 +40,10 @@ const skillData = {
   Backend: [
     { name: "Node.js", icon: FaNodeJs, color: "#68a063" },
     { name: "Express.js", icon: SiExpress, color: "#000000" },
-    { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+    { name: "TypeScript", icon: SiTypescript, color: "#3178c6" },
     { name: "MongoDB", icon: SiMongodb, color: "#4DB33D" },
     { name: "Java", icon: FaJava, color: "#f89820" },
+    { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
     { name: "MySQL", icon: SiMysql, color: "#00758F" },
   ],
   Tools: [
@@ -55,10 +56,9 @@ const skillData = {
     { name: "IntelliJ", icon: SiIntellijidea, color: "#000000" },
   ],
   Future: [
-    { name: "TypeScript", icon: SiTypescript, color: "#3178c6" },
-    { name: "Docker", icon: SiDocker, color: "#1D63ED" },
     { name: "Python", icon: SiPython, color: "#3572A5" },
     { name: "Gen AI", icon: SiOpenai, color: "#4a5568" },
+    { name: "Docker", icon: SiDocker, color: "#1D63ED" },
   ],
 };
 
