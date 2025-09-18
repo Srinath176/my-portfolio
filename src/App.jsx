@@ -4,7 +4,9 @@ import { lazy, Suspense } from "react";
 import AnimatedSection from "./components/AnimatedSection";
 // highlight-end
 
-const AnimatedBlobBackground = lazy(() => import("./components/AnimatedBlobBg"));
+const AnimatedBlobBackground = lazy(() =>
+  import("./components/AnimatedBlobBg")
+);
 // highlight-start
 // Lazy load all major sections
 const Profile = lazy(() => import("./components/Profile"));
@@ -24,7 +26,9 @@ const SectionLoader = () => (
 function App() {
   return (
     <div className="min-h-screen overflow-hidden">
-      <Suspense fallback={null}> {/* Fallback for blob background can be null */}
+      <Suspense fallback={null}>
+        {" "}
+        {/* Fallback for blob background can be null */}
         <AnimatedBlobBackground />
       </Suspense>
       <div id="home">
@@ -33,11 +37,10 @@ function App() {
 
       {/* highlight-start */}
       {/* Wrap each lazy-loaded component in Suspense */}
-      <Suspense fallback={<SectionLoader />}>
-        <AnimatedSection id="profile">
-          <Profile />
-        </AnimatedSection>
-      </Suspense>
+
+      <div id="profile">
+        <Profile />
+      </div>
 
       <Suspense fallback={<SectionLoader />}>
         <AnimatedSection id="skills">

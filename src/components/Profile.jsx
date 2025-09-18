@@ -101,6 +101,10 @@ function Profile() {
               alt="profile"
               className="w-full h-full object-cover"
               loading="lazy"
+              // highlight-start
+              width="256" // Corresponds to sm:w-64
+              height="256" // Corresponds to sm:h-64
+              // highlight-end
             />
           </motion.div>
           <motion.h2
