@@ -1,51 +1,68 @@
 import Header from "./components/Header";
-import Profile from "./components/Profile";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import GetInTouch from "./components/GetInTouch";
-import AnimatedSection from "./components/AnimatedSection";
-import Experience from "./components/Experience";
+// highlight-start
 import { lazy, Suspense } from "react";
+import AnimatedSection from "./components/AnimatedSection";
+// highlight-end
 
 const AnimatedBlobBackground = lazy(() => import("./components/AnimatedBlobBg"));
+// highlight-start
+// Lazy load all major sections
+const Profile = lazy(() => import("./components/Profile"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Experience = lazy(() => import("./components/Experience"));
+const GetInTouch = lazy(() => import("./components/GetInTouch"));
+
+// A simple fallback component to show while sections are loading
+const SectionLoader = () => (
+  <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[var(--color-accent)]"></div>
+  </div>
+);
+// highlight-end
 
 function App() {
   return (
     <div className="min-h-screen overflow-hidden">
-      <Suspense
-        fallback={
-          <div
-            aria-hidden
-            className="pointer-events-none h-40 md:h-56 lg:h-72"
-          />
-        }
-      >
+      <Suspense fallback={null}> {/* Fallback for blob background can be null */}
         <AnimatedBlobBackground />
       </Suspense>
-      {/* Treat Header as the Home section */}
       <div id="home">
         <Header />
       </div>
 
-      <AnimatedSection id="profile">
-        <Profile />
-      </AnimatedSection>
+      {/* highlight-start */}
+      {/* Wrap each lazy-loaded component in Suspense */}
+      <Suspense fallback={<SectionLoader />}>
+        <AnimatedSection id="profile">
+          <Profile />
+        </AnimatedSection>
+      </Suspense>
 
-      <AnimatedSection id="skills">
-        <Skills />
-      </AnimatedSection>
+      <Suspense fallback={<SectionLoader />}>
+        <AnimatedSection id="skills">
+          <Skills />
+        </AnimatedSection>
+      </Suspense>
 
-      <AnimatedSection id="projects">
-        <Projects />
-      </AnimatedSection>
+      <Suspense fallback={<SectionLoader />}>
+        <AnimatedSection id="projects">
+          <Projects />
+        </AnimatedSection>
+      </Suspense>
 
-      <AnimatedSection id="experience">
-        <Experience />
-      </AnimatedSection>
+      <Suspense fallback={<SectionLoader />}>
+        <AnimatedSection id="experience">
+          <Experience />
+        </AnimatedSection>
+      </Suspense>
 
-      <AnimatedSection id="contact">
-        <GetInTouch />
-      </AnimatedSection>
+      <Suspense fallback={<SectionLoader />}>
+        <AnimatedSection id="contact">
+          <GetInTouch />
+        </AnimatedSection>
+      </Suspense>
+      {/* highlight-end */}
     </div>
   );
 }
