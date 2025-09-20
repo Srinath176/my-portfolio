@@ -1,15 +1,13 @@
 import Header from "./components/Header";
-// highlight-start
 import { lazy, Suspense } from "react";
 import AnimatedSection from "./components/AnimatedSection";
-// highlight-end
+import Profile from "./components/Profile"
 
 const AnimatedBlobBackground = lazy(() =>
   import("./components/AnimatedBlobBg")
 );
 // highlight-start
 // Lazy load all major sections
-const Profile = lazy(() => import("./components/Profile"));
 const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
