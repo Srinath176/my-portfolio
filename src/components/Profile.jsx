@@ -1,7 +1,7 @@
 import { DownloadCloud, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { memo, useMemo } from "react";
+import { lazy, memo, useMemo } from "react";
 
 const RightContent = memo(({ darkMode }) => (
   <motion.div
@@ -100,11 +100,9 @@ function Profile() {
               src="/profile.webp"
               alt="profile"
               className="w-full h-full object-cover"
-              loading="lazy"
-              // highlight-start
+              loading={lazy}
               width="256" // Corresponds to sm:w-64
               height="256" // Corresponds to sm:h-64
-              // highlight-end
             />
           </motion.div>
           <motion.h2
