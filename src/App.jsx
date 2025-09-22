@@ -36,7 +36,7 @@ function App() {
       {/* highlight-start */}
       {/* Wrap each lazy-loaded component in Suspense */}
 
-      <div id="profile" className="sm:pt-28 lg:pt-0">
+      <div id="profile">
         <Profile />
       </div>
 

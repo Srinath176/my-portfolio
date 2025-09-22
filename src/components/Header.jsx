@@ -75,7 +75,10 @@ function Header() {
   };
 
   return (
-    <header className="w-full py-4 flex justify-center z-50 relative">
+    <header className="w-full flex justify-center z-50">
+      <div className="h-24 md:h-0">
+
+     
       {/* Desktop Nav */}
       <motion.nav
         initial={{ opacity: 0, y: -10 }}
@@ -145,6 +148,7 @@ function Header() {
           </Suspense>
         </div>
       </motion.nav>
+      </div>
 
       {/* Mobile Nav */}
       {isMobile && (
