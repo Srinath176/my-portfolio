@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { Moon, MoonStar, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useDarkMode } from "../context/DarkModeContext.jsx";
 
 function DarkModeToggle() {
