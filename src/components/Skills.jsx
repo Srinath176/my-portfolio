@@ -8,7 +8,7 @@ const SkillCard = memo(({ skill, index }) => (
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay: index * 0.05, duration: 0.2 }}
     whileHover={{ scale: 1.05 }}
-    className="w-32 h-32 flex flex-col justify-center items-center gap-3 px-4 py-3 card rounded-full shadow-sm"
+    className="w-32 h-32 flex flex-col justify-center items-center gap-3 px-4 py-3 rounded-full shadow-sm"
     style={{ willChange: "opacity, transform" }}
   >
     <motion.div

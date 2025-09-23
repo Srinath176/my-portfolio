@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useDarkMode } from "../context/DarkModeContext";
 import { Link } from "react-scroll";
 import useMediaQuery from "../utils/useMediaQuery";
+import SectionLoader from "./SectionLoader";
 
 const DarkModeToggle = lazy(() => import("./DarkModeToggle"));
 const ToolTip = lazy(() => import("./ToolTip"));
@@ -77,77 +78,69 @@ function Header() {
   return (
     <header className="w-full flex justify-center z-50">
       <div className="h-24 md:h-0">
-
-     
-      {/* Desktop Nav */}
-      <motion.nav
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-        className="hidden lg:flex fixed top-4 left-1/2 -translate-x-1/2 card shadow-lg px-6 py-3 rounded-full items-center justify-between w-[95%] sm:w-[90%] lg:w-[70%] max-w-6xl z-50"
-        style={{ willChange: "opacity, transform" }}
-      >
-        <div className="font-extrabold text-xl pr-4 bg-gradient-to-l from-[#38bdf8] to-[#0284c7] bg-[length:200%_auto] bg-clip-text text-transparent">
-          SG.dev
-        </div>
-        <ul className="flex items-center justify-center gap-6 font-medium">
-          {menuItems.map((item) => (
-            <li key={item.name}>
-              <Suspense
-                fallback={
-                  <div className="text-[var(--color-text-secondary)]">
-                    Loading...
-                  </div>
-                }
+        {/* Desktop Nav */}
+        <motion.nav
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="hidden lg:flex fixed top-4 left-1/2 -translate-x-1/2 card shadow-lg px-6 py-3 rounded-full items-center justify-between w-[95%] sm:w-[90%] lg:w-[70%] max-w-6xl z-50"
+          style={{ willChange: "opacity, transform" }}
+        >
+          <div className="font-extrabold text-xl pr-4 bg-gradient-to-l from-[#38bdf8] to-[#0284c7] bg-[length:200%_auto] bg-clip-text text-transparent">
+            SG.dev
+          </div>
+          <ul className="flex items-center justify-center gap-6 font-medium">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <Suspense fallback={<SectionLoader />}>
+                  <ToolTip label={item.name}>
+                    <Link
+                      to={item.path}
+                      smooth={true}
+                      duration={1000}
+                      offset={item.offset}
+                      spy={true}
+                      activeClass="active-link"
+                      className="flex items-center gap-2 px-2 py-1 transition-colors cursor-pointer text-[var(--color-text-secondary)]"
+                    >
+                      {item.icon}
+                    </Link>
+                  </ToolTip>
+                </Suspense>
+              </li>
+            ))}
+            <li>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={1000}
+                offset={-70}
+                className="px-4 py-2 rounded-full flex items-center gap-2 font-semibold shadow-lg cursor-pointer transition-colors duration-[0.3s] bg-[var(--color-accent)] text-[var(--color-button-text)] hover:bg-[var(--color-accent-hover)]"
               >
-                <ToolTip label={item.name}>
-                  <Link
-                    to={item.path}
-                    smooth={true}
-                    duration={1000}
-                    offset={item.offset}
-                    spy={true}
-                    activeClass="active-link"
-                    className="flex items-center gap-2 px-2 py-1 transition-colors cursor-pointer text-[var(--color-text-secondary)]"
-                  >
-                    {item.icon}
-                  </Link>
-                </ToolTip>
-              </Suspense>
+                Join Me
+                <motion.div
+                  animate={{ y: [0, -4, 0], opacity: 1 }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                >
+                  <ArrowDown size={16} />
+                </motion.div>
+              </Link>
             </li>
-          ))}
-          <li>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={1000}
-              offset={-70}
-              className="px-4 py-2 rounded-full flex items-center gap-2 font-semibold shadow-lg cursor-pointer transition-colors duration-[0.3s] bg-[var(--color-accent)] text-[var(--color-button-text)] hover:bg-[var(--color-accent-hover)]"
+          </ul>
+          <div className="pl-4 cursor-pointer">
+            <Suspense
+              fallback={
+                <div className="text-[var(--color-text-secondary)]">
+                  Loading...
+                </div>
+              }
             >
-              Join Me
-              <motion.div
-                animate={{ y: [0, -4, 0], opacity: 1 }}
-                transition={{ repeat: Infinity, duration: 2 }}
-              >
-                <ArrowDown size={16} />
-              </motion.div>
-            </Link>
-          </li>
-        </ul>
-        <div className="pl-4 cursor-pointer">
-          <Suspense
-            fallback={
-              <div className="text-[var(--color-text-secondary)]">
-                Loading...
-              </div>
-            }
-          >
-            <ToolTip label={darkMode ? "Light" : "Dark"}>
-              <DarkModeToggle />
-            </ToolTip>
-          </Suspense>
-        </div>
-      </motion.nav>
+              <ToolTip label={darkMode ? "Light" : "Dark"}>
+                <DarkModeToggle />
+              </ToolTip>
+            </Suspense>
+          </div>
+        </motion.nav>
       </div>
 
       {/* Mobile Nav */}

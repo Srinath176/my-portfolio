@@ -95,7 +95,7 @@ export default function GetInTouch() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-[var(--color-text)]">
+          <h2 className="text-4xl font-bold text-[var(--color-accent)]">
             Work With Me
           </h2>
           <p className="text-[var(--color-text-secondary)]">

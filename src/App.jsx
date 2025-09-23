@@ -1,7 +1,8 @@
 import Header from "./components/Header";
 import { lazy, Suspense } from "react";
 import AnimatedSection from "./components/AnimatedSection";
-import Profile from "./components/Profile"
+import Profile from "./components/Profile";
+import SectionLoader from "./components/SectionLoader";
 
 const AnimatedBlobBackground = lazy(() =>
   import("./components/AnimatedBlobBg")
@@ -12,14 +13,6 @@ const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
 const GetInTouch = lazy(() => import("./components/GetInTouch"));
-
-// A simple fallback component to show while sections are loading
-const SectionLoader = () => (
-  <div className="w-full h-screen flex items-center justify-center">
-    <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[var(--color-accent)]"></div>
-  </div>
-);
-// highlight-end
 
 function App() {
   return (
