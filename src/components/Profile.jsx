@@ -46,7 +46,7 @@ const RightContent = memo(({ darkMode }) => (
         </motion.div>
       </Link>
       <div className="relative group">
-        <Info className="w-4 h-4 text-[var(--color-text)] cursor-pointer mt-1" />
+        <Info className="hidden md:block w-4 h-4 text-[var(--color-text)] cursor-pointer mt-1" />
         <div className="absolute -top-10 left-3/4 -translate-x-1/2 text-[var(--color-text)] text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap">
           Resume available — just drop me a message.
         </div>

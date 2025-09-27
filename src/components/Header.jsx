@@ -128,11 +128,7 @@ function Header() {
             </li>
           </ul>
           <div className="pl-4 cursor-pointer">
-            <Suspense
-              fallback={
-                <SectionLoader />
-              }
-            >
+            <Suspense fallback={<SectionLoader />}>
               <ToolTip label={darkMode ? "Light" : "Dark"}>
                 <DarkModeToggle />
               </ToolTip>
@@ -151,9 +147,7 @@ function Header() {
             {isMenuOpen ? <X size={22} /> : <Grip size={22} />}
           </button>
           <div className="flex items-center gap-3">
-            <Suspense fallback={<SectionLoader/>}>
-              <DarkModeToggle />
-            </Suspense>
+            <DarkModeToggle />
             <Link
               to="contact"
               smooth={true}
