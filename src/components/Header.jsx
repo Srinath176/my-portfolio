@@ -13,7 +13,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useDarkMode } from "../context/DarkModeContext";
 import { Link } from "react-scroll";
 import useMediaQuery from "../utils/useMediaQuery";
-import SectionLoader from "./SectionLoader";
 
 const DarkModeToggle = lazy(() => import("./DarkModeToggle"));
 const ToolTip = lazy(() => import("./ToolTip"));
@@ -92,21 +91,19 @@ function Header() {
           <ul className="flex items-center justify-center gap-6 font-medium">
             {menuItems.map((item) => (
               <li key={item.name}>
-                <Suspense fallback={<SectionLoader />}>
-                  <ToolTip label={item.name}>
-                    <Link
-                      to={item.path}
-                      smooth={true}
-                      duration={1000}
-                      offset={item.offset}
-                      spy={true}
-                      activeClass="active-link"
-                      className="flex items-center gap-2 px-2 py-1 transition-colors cursor-pointer text-[var(--color-text-secondary)]"
-                    >
-                      {item.icon}
-                    </Link>
-                  </ToolTip>
-                </Suspense>
+                <ToolTip label={item.name}>
+                  <Link
+                    to={item.path}
+                    smooth={true}
+                    duration={1000}
+                    offset={item.offset}
+                    spy={true}
+                    activeClass="active-link"
+                    className="flex items-center gap-2 px-2 py-1 transition-colors cursor-pointer text-[var(--color-text-secondary)]"
+                  >
+                    {item.icon}
+                  </Link>
+                </ToolTip>
               </li>
             ))}
             <li>
@@ -128,11 +125,9 @@ function Header() {
             </li>
           </ul>
           <div className="pl-4 cursor-pointer">
-            <Suspense fallback={<SectionLoader />}>
-              <ToolTip label={darkMode ? "Light" : "Dark"}>
-                <DarkModeToggle />
-              </ToolTip>
-            </Suspense>
+            <ToolTip label={darkMode ? "Light" : "Dark"}>
+              <DarkModeToggle />
+            </ToolTip>
           </div>
         </motion.nav>
       </div>

@@ -98,9 +98,9 @@ function Profile() {
           >
             <img
               src="/profile.webp"
-              alt="profile"
+              alt="profile-pic"
               className="w-full h-full object-cover"
-              loading={lazy}
+              loading="lazy"
               width="256" // Corresponds to sm:w-64
               height="256" // Corresponds to sm:h-64
             />
