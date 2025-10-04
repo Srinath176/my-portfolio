@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import { lazy, Suspense } from "react";
-import AnimatedSection from "./components/AnimatedSection";
 import Profile from "./components/Profile";
 import SectionLoader from "./components/SectionLoader";
 
@@ -16,48 +15,43 @@ const GetInTouch = lazy(() => import("./components/GetInTouch"));
 
 function App() {
   return (
-    <div className="min-h-screen overflow-hidden">
-      <Suspense fallback={null}>
-        {" "}
-        {/* Fallback for blob background can be null */}
-        <AnimatedBlobBackground />
-      </Suspense>
-      <div id="home">
-        <Header />
-      </div>
+    <Suspense fallback={<SectionLoader />}>
+      <div className="min-h-screen overflow-hidden">
+        <Suspense fallback={null}>
+          {" "}
+          {/* Fallback for blob background can be null */}
+          <AnimatedBlobBackground />
+        </Suspense>
+        <div id="home">
+          <Header />
+        </div>
 
-      {/* highlight-start */}
-      {/* Wrap each lazy-loaded component in Suspense */}
+        {/* highlight-start */}
+        {/* Wrap each lazy-loaded component in Suspense */}
 
-      <div id="profile">
-        <Profile />
-      </div>
+        <div id="profile">
+          <Profile />
+        </div>
 
-      <Suspense fallback={<SectionLoader />}>
-        <AnimatedSection id="skills">
+        <div id="skills">
           <Skills />
-        </AnimatedSection>
-      </Suspense>
+        </div>
 
-      <Suspense fallback={<SectionLoader />}>
-        <AnimatedSection id="projects">
+        <div id="projects">
           <Projects />
-        </AnimatedSection>
-      </Suspense>
+        </div>
 
-      <Suspense fallback={<SectionLoader />}>
-        <AnimatedSection id="experience">
+        <div id="experience">
           <Experience />
-        </AnimatedSection>
-      </Suspense>
+        </div>
 
-      <Suspense fallback={<SectionLoader />}>
-        <AnimatedSection id="contact">
+        <div id="contact">
           <GetInTouch />
-        </AnimatedSection>
-      </Suspense>
-      {/* highlight-end */}
-    </div>
+        </div>
+
+        {/* highlight-end */}
+      </div>
+    </Suspense>
   );
 }
 
