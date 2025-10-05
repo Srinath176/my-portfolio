@@ -6,7 +6,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="h-[70vh] flex items-center justify-center px-4"
+      className="min-h-[70vh] flex items-center justify-center px-4"
     >
       <div className="max-w-7xl w-full">
         {/* Heading */}
