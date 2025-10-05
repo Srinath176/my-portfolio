@@ -7,7 +7,7 @@ const RightContent = memo(({ darkMode }) => (
   <motion.div
     initial={{ opacity: 0, x: 30 }}
     animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 1, delay: 0.3, ease:"easeOut" }}
+    transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
     className="w-full lg:w-1/2 text-center lg:text-left space-y-6"
     style={{ willChange: "opacity, transform" }}
   >
@@ -79,7 +79,7 @@ function Profile() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease:"easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-center w-full lg:w-1/2 relative"
           style={{ willChange: "opacity, transform" }}
         >

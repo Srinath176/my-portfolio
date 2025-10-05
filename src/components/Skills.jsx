@@ -5,7 +5,7 @@ import { skillData, categories } from "../utils/skillData";
 const SkillCard = memo(({ skill, index }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
+    whileInView={{ opacity: 1, scale: 1 }}
     transition={{ delay: index * 0.05, duration: 0.2 }}
     whileHover={{ scale: 1.05 }}
     className="w-32 h-32 flex flex-col justify-center items-center gap-3 px-4 py-3 rounded-full lg:shadow-md"
@@ -37,7 +37,7 @@ function Skills() {
       <div className="max-w-7xl min-h-[70vh] mx-auto card rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center gap-2">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold text-center text-[var(--color-accent)] mb-8"
         >
@@ -84,7 +84,7 @@ function Skills() {
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
               className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl mx-auto"

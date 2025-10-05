@@ -12,13 +12,14 @@ const ProjectCard = memo(({ project, index, darkMode, onClick }) => (
       darkMode ? "card" : "bg-indigo-50"
     } border border-zinc-200 rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer`}
     initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
+    whileInView={{ opacity: 1, y: 0 }}
     transition={{
       type: "spring",
       stiffness: 100,
       damping: 18,
       delay: index * 0.1,
     }}
+    style={{ willChange: "transform,opacity" }}
     whileHover={{ scale: 1.02 }}
     onClick={() => onClick(project)}
   >
@@ -42,7 +43,7 @@ const ModalContent = memo(({ project, darkMode, onClose }) => (
   <motion.div
     className="card max-w-lg w-full mx-4 rounded-xl p-6 relative"
     initial={{ scale: 0.8, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
+    whileInView={{ scale: 1, opacity: 1 }}
     exit={{ scale: 0.8, opacity: 0 }}
     onClick={(e) => e.stopPropagation()}
   >
@@ -175,7 +176,7 @@ function ProjectsSection() {
             <motion.div
               className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeModal}
             >

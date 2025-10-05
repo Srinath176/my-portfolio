@@ -24,8 +24,7 @@ function Header() {
 
   const menuItems = useMemo(
     () => [
-      { name: "Home", icon: <Home />, path: "home", offset: 0 },
-      { name: "Profile", icon: <UserRound />, path: "profile", offset: -70 },
+      { name: "Home", icon: <Home />, path: "home", offset: -70 },
       { name: "Skills", icon: <FolderCodeIcon />, path: "skills", offset: -70 },
       {
         name: "Projects",

@@ -22,14 +22,10 @@ function App() {
           {/* Fallback for blob background can be null */}
           <AnimatedBlobBackground />
         </Suspense>
+
+        <Header />
+
         <div id="home">
-          <Header />
-        </div>
-
-        {/* highlight-start */}
-        {/* Wrap each lazy-loaded component in Suspense */}
-
-        <div id="profile">
           <Profile />
         </div>
 
