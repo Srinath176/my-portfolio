@@ -11,16 +11,16 @@ const ProjectCard = memo(({ project, index, darkMode, onClick }) => (
     className={`${
       darkMode ? "card" : "bg-indigo-50"
     } border border-zinc-200 rounded-xl p-6 shadow-md hover:shadow-lg transition cursor-pointer`}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, scale:0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
     transition={{
       type: "spring",
       stiffness: 100,
-      damping: 18,
-      delay: index * 0.1,
+      damping: 10,
+      delay: index * 0.05,
     }}
     style={{ willChange: "transform,opacity" }}
-    whileHover={{ scale: 1.02 }}
+    whileHover={{ scale: 1.01 }}
     onClick={() => onClick(project)}
   >
     <h3 className="text-xl font-semibold mb-2 text-[var(--color-text)]">
