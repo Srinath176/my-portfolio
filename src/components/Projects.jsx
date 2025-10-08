@@ -137,7 +137,7 @@ function ProjectsSection() {
 
   return (
     <section className="w-screen px-4 py-16">
-      <div className="card max-w-7xl min-h-[70vh] mx-auto relative z-0 rounded-2xl shadow-xl p-8">
+      <div className="card max-w-7xl min-h-[70vh] mx-auto relative rounded-2xl shadow-xl p-8">
         <motion.h2
           className="text-3xl font-bold text-center mb-12 text-[var(--color-accent)]"
           initial={{ opacity: 0, y: -30 }}
@@ -174,7 +174,7 @@ function ProjectsSection() {
         <AnimatePresence>
           {activeProject && (
             <motion.div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[999]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
