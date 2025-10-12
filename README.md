@@ -24,7 +24,8 @@ The site showcases projects, skills, and contact details with smooth animations 
 - [Tailwind CSS](https://tailwindcss.com/) – utility-first styling  
 - [Framer Motion](https://www.framer.com/motion/) – smooth animations  
 - [EmailJS](https://www.emailjs.com/) – email integration  
-- [Lucide React](https://lucide.dev/) – modern icons  
+- [Lucide React](https://lucide.dev/) – modern icons
+- [React-Icons](https://www.react-icons.com/) - Icon library  
 
 ---
 
